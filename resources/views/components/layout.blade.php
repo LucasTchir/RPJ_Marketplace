@@ -140,6 +140,24 @@
             max-height: none;    
         }
 
+        /* Listing hover */
+        .listing-hover {
+            transition: transform 0.3s ease;
+        }
+
+        .listing-hover:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Link hover */
+        .link-hover {
+            transition: transform 0.3s ease;
+        }
+
+        .link-hover:hover {
+            transform: scale(1.05);
+        }
+
         @media (max-width: 1088px) {
             .odporucane-box {
                 width: 45% !important;  
@@ -195,6 +213,14 @@
         @media (max-width: 747px) {
             .odporucane-box {
                 width: 70% !important;  
+            }
+
+            .slider-listing-info {
+                display: none;
+            }
+
+            .slider-listing {
+                justify-content: center;
             }
         }
 
@@ -274,13 +300,13 @@
                     </div>
                 @else
                     <div class="d-flex justify-content-around align-items-center auth-div" style="width: 300px;">
-                        <a href="/register" class="link">
+                        <a href="/register" class="link link-hover">
                             <span class="border rounded-5 border-black d-flex justify-content-center align-items-center" style="min-width: 140px; padding: 6px 0 6px 0;">
                                 Registrácia
                             </span>
                         </a>
                             
-                        <a href="/login" class="link">
+                        <a href="/login" class="link link-hover">
                             <span class="border rounded-5 border-black bg-black px-4 d-flex justify-content-center align-items-center" style="min-width: 140px; padding: 6px 0 6px 0; color: white;">
                                 Prihlásenie
                             </span>

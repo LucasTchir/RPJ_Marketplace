@@ -108,7 +108,7 @@
 
                             <div class="row d-flex justify-content-center justify-content-sm-start px-1 px-sm-5">
                                 @foreach ($categoryListings[$category->id] as $listing)
-                                    <x-listing :listing="$listing" />
+                                    <x-listing :listing="$listing"/>
                                 @endforeach
                             </div>
                         </div>

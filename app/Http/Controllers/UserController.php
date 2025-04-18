@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
 
 class UserController extends Controller
 {
@@ -44,7 +45,10 @@ class UserController extends Controller
 
         auth()->login($user);
 
+        event(new Registered($user));
+
         return redirect("/setup/{$user->id}")->with("messasge", "Úspešne zaregistrovaný.");
+        //return response()->noContent();
     }
 
     public function authenticate(Request $request) {
