@@ -17,12 +17,14 @@ class VerifyEmail extends VerifyEmailBase
             return call_user_func(static::$toMailCallback, $notifiable);
         }
         return (new MailMessage)
-            ->subject('over email')
-            ->line('tu klikaj.')
+            ->subject('Overenie e-mailu')
+            ->greeting('Dobrý deň!')
+            ->line('Ďakujeme za registráciu. Na overenie vašej e-mailovej adresy kliknite na tlačidlo nižšie.')
             ->action(
-            'nig',
+            'Overiť',
                 $this->verificationUrl($notifiable)
             )
-            ->line('If you did not create an account, no further action is required.');
+            ->line('Ak ste si účet nevytvorili, nie sú potrebné žiadne ďalšie kroky.')
+            ->salutation("\r\n\r\n S pozdravom,  \r\n Marketplace");
     }
 }

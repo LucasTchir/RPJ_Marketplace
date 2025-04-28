@@ -122,7 +122,10 @@
                                         @enderror
                                     </div>
 
-                                    <button type="submit" class="" style="">Vytvoriť Inzerát</button>
+                                    <button type="submit" class="btn bg-green w-100 py-2 fw-bold rounded-3 shadow-sm">
+                                        <i class="bi bi-plus-circle me-2"></i> Vytvoriť Inzerát
+                                    </button>
+                                    
                                 </div>
                             </div>
                         </div>

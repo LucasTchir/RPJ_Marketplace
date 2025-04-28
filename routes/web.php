@@ -34,7 +34,7 @@ Route::put("/listing/manage/edit/{listing}", [ListingController::class, "update"
 Route::get("/listing/edit/{listing}", [ListingController::class, "edit"])->middleware(["auth", "verified"]);
 Route::delete('/delete/profile/{id}', [UserController::class, 'destroy'])->middleware(["auth", "verified"]);
 // Odhlasenie
-Route::post("/logout", [UserController::class, "logout"])->middleware(["auth", "verified"]);
+Route::post("/logout", [UserController::class, "logout"])->middleware(["auth"/* , "verified" */]);
 // Zobrazenie usera
 Route::get("/users/{username}", [UserController::class, "show"]);
 // Zobrazenie inzeratu
