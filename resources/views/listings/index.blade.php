@@ -35,22 +35,6 @@
                 </div>  
             @endif
 
-            {{-- <div class="mt-4">
-                @if($recommendedListings->isEmpty())
-                    <p></p>
-                @else
-                    <div class="d-flex justify-content-between align-items-center mb-1">
-                        <span class="fw-bold" style="font-size: 24px;">Navrhnuté len pre vás</span>
-                    </div>
-    
-                    <div class="row d-flex justify-content-start px-4">
-                        @foreach ($recommendedListings as $listing)
-                            <x-listing :listing="$listing"/>
-                        @endforeach
-                    </div>
-                @endif
-            </div> --}}
-
             <div class="mt-5">
                 @if($nearListings->isEmpty())
                     <p></p>

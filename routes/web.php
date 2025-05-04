@@ -68,6 +68,9 @@ Route::post('/recommend/{category_id}', [RecommendedController::class, 'recommen
 Route::get('/setup/{user}', [RecommendedController::class, 'show'])->middleware(["auth", "verified"]);
 Route::post('/setup/store/{user}', [RecommendedController::class, 'store'])->middleware(["auth", "verified"]);
 Route::get('/interest/{listing}', [NotificationController::class, 'interest'])->middleware(["auth", "verified"]);
+Route::post('/categories/update-selection', [RecommendedController::class, 'updateSelection'])
+    ->name('categories.updateSelection')
+    ->middleware(["auth", "verified"]);
 // Hodnotenie
 Route::post('/rate', [RatingController::class, 'store'])->middleware(["auth", "verified"]);
 // Zmena hesla
@@ -75,11 +78,7 @@ Route::get('/change-password', [UserController::class, 'changePassword'])->middl
 Route::post('/change-password-save', [UserController::class, 'changePasswordSave'])->middleware(["auth", "verified"]);
 // Nahlásenie
 Route::get('/listing/report/{id}', [NotificationController::class, 'report'])->middleware(["auth", "verified"]);
-
-Route::post('/categories/update-selection', [RecommendedController::class, 'updateSelection'])
-    ->name('categories.updateSelection')
-    ->middleware(["auth", "verified"]);
-    
+// Email Verifikacia
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
 })->middleware('auth')->name('verification.notice');

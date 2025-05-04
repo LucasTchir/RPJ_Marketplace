@@ -70,13 +70,13 @@ class DashboardController extends Controller
             "categories" => Category::all(),
             "listing" => $listing
         ]);
-    } /* Toto tu asi nemusi byt, kedze staci pouzivat edit ktory ma user */
+    } 
 
     public function edit_user(User $user) {
         return view("dashboard.edit-user", [
             "user" => $user
         ]);
-    } /* Toto tu asi nemusi byt, kedze staci pouzivat edit ktory ma user */
+    }
 
     public function update(Request $request, User $user) {
         if(!auth()->user()->isAdmin()) {

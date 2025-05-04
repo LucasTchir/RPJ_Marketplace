@@ -23,25 +23,27 @@
                     </div>
                 </div>
 
-                {{-- ------------------------------- Profil ------------------------------- --}}
-                <div x-show="currentStep === 'profile'">
-                    <div class="d-flex justify-content-center">
-                        <div class="row w-75 d-flex align-items-center border-bottom border-black" style="height: 8vh;">
-                            <div class="col-12 col-sm-9 text-center text-sm-start">
-                                <h4 class="fw-bold mb-0 fs-3">Nastav si svoj profil</h4>
-                            </div>
-                
-                            <div class="col-12 col-sm-3 d-flex justify-content-between justify-content-sm-end">
-                                <button type="button" @click="currentStep = 'location'" :class="{ 'font-bold': currentStep === 'location' }" class="btn rounded-5 px-2 d-flex justify-content-center align-items-center fw-semibold" style="min-width: 120px; padding: 5px 0 5px 0; background-color: #f2f2f2; border-color: #595959;">
-                                    Pokračovať
-                                </button>
+                {{-- ------------------------------- Začiatok Formulára ------------------------------- --}}
+                <form method="POST" action="/setup/store/{{$user->id}}" enctype="multipart/form-data">
+                    @csrf
+
+                    {{-- ------------------------------- Profil ------------------------------- --}}
+                    <div x-show="currentStep === 'profile'">
+                        <div class="d-flex justify-content-center">
+                            <div class="row w-75 d-flex align-items-center border-bottom border-black" style="height: 8vh;">
+                                <div class="col-12 col-sm-9 text-center text-sm-start">
+                                    <h4 class="fw-bold mb-0 fs-3">Nastav si svoj profil</h4>
+                                </div>
+                    
+                                <div class="col-12 col-sm-3 d-flex justify-content-between justify-content-sm-end">
+                                    <button type="button" @click="currentStep = 'location'" :class="{ 'font-bold': currentStep === 'location' }" class="btn rounded-5 px-2 d-flex justify-content-center align-items-center fw-semibold" style="min-width: 120px; padding: 5px 0 5px 0; background-color: #f2f2f2; border-color: #595959;">
+                                        Pokračovať
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="mt-2">
-                        <form method="POST" action="/setup/store/{{$user->id}}" enctype="multipart/form-data" class="d-flex justify-content-center">
-                            @csrf
+                        <div class="mt-2 d-flex justify-content-center">
                             <div class="w-75 row g-3">
                                 <div class="col-12 col-md-6 p-3">
                                     <div class="mb-3">
@@ -95,7 +97,7 @@
                                 </div>
                             </div>
                         </div>
-                </div>
+                    </div>
 
                     {{-- ------------------------------- Oblast ------------------------------- --}}
                     <div x-show="currentStep === 'location'">
@@ -104,7 +106,7 @@
                                 <div class="col-12 col-sm-9 text-center text-sm-start">
                                     <h4 class="fw-bold mb-0 fs-3">Vyber si oblasť, v ktorej ti pomôžeme nájsť čo ťa zaujíma</h4>
                                 </div>
-                    
+                        
                                 <div class="col-12 col-sm-3 d-flex justify-content-between justify-content-sm-end">
                                     <button type="button" @click="currentStep = 'profile'" :class="{ 'font-bold': currentStep === 'profile' }"  class="btn rounded-5 px-2 d-flex justify-content-center align-items-center fw-semibold me-2" style="min-width: 80px; padding: 5px 0 5px 0; background-color: #f2f2f2; border-color: #595959;">
                                         Spať
@@ -133,7 +135,7 @@
                                 <div class="col-12 col-sm-9 text-center text-sm-start">
                                     <h4 class="fw-bold mb-0 fs-3">Vyber si čo ťa najviac zaujíma</h4>
                                 </div>
-                    
+                        
                                 <div class="col-12 col-sm-3 d-flex justify-content-between justify-content-sm-end">
                                     <button type="button" @click="currentStep = 'location'" :class="{ 'font-bold': currentStep === 'location' }"  class="btn rounded-5 px-2 d-flex justify-content-center align-items-center fw-semibold me-2" style="min-width: 80px; padding: 5px 0 5px 0; background-color: #f2f2f2; border-color: #595959;">
                                         Spať
@@ -146,33 +148,31 @@
                             </div>
                         </div>
 
-                        
-                            <div class="d-flex justify-content-center mt-2">
-                                <div class="w-75 d-flex justify-content-around flex-wrap">
-                                    @foreach ($categories as $category)
-                                        @php
-                                            $isChecked = $selectedCategories->contains($category->id);
-                                        @endphp
+                        <div class="d-flex justify-content-center mt-2">
+                            <div class="w-75 d-flex justify-content-around flex-wrap">
+                                @foreach ($categories as $category)
+                                    @php
+                                        $isChecked = $selectedCategories->contains($category->id);
+                                    @endphp
 
-                                        <label class="category-card border rounded-3 mx-2 mt-3 d-flex justify-content-center align-items-center flex-column
-                                            {{ $isChecked ? 'selected' : '' }}" 
-                                            style="width: 128px; height: 128px;"
-                                            data-id="{{ $category->id }}">
+                                    <label class="category-card border rounded-3 mx-2 mt-3 d-flex justify-content-center align-items-center flex-column
+                                        {{ $isChecked ? 'selected' : '' }}" 
+                                        style="width: 128px; height: 128px;"
+                                        data-id="{{ $category->id }}">
 
-                                            <input type="checkbox" name="categories[]" value="{{ $category->id }}" class="d-none"
-                                                {{ $isChecked ? 'checked' : '' }}>
-                                            
-                                            <span class="fs-5 icon" style="color: {{ $isChecked ? 'black' : '#ccc' }};">{!! $category->icon !!}</span>
-                                            
-                                            <p class="mb-0 fs-6 text" style="color: {{ $isChecked ? 'black' : '#ccc' }};">{{ $category->category_name }}</p>
+                                        <input type="checkbox" name="categories[]" value="{{ $category->id }}" class="d-none"
+                                            {{ $isChecked ? 'checked' : '' }}>
+                                        
+                                        <span class="fs-5 icon" style="color: {{ $isChecked ? 'black' : '#ccc' }};">{!! $category->icon !!}</span>
+                                        
+                                        <p class="mb-0 fs-6 text" style="color: {{ $isChecked ? 'black' : '#ccc' }};">{{ $category->category_name }}</p>
 
-                                        </label>
-                                    @endforeach
-
-                                </div>
+                                    </label>
+                                @endforeach
                             </div>
-                        </form>
-                </div>
+                        </div>
+                    </div>
+                </form> {{-- KONIEC FORMULARA --}}
             </div>
         </div>
     </div>
@@ -198,7 +198,6 @@
                         card.querySelector(".text").style.color = "#ccc";
                     }
     
-                    // Send AJAX request to update selection in the database
                     updateCategorySelection(categoryId, checkbox.checked);
                 });
             });
@@ -215,5 +214,4 @@
             }
         });
     </script>
-    
 </x-layout>

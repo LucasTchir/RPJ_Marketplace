@@ -83,7 +83,7 @@
                                 </button>
                             </div>
                             @error("email")
-                                <p class="text-danger">Zlý formát emailu</p>
+                                <p class="text-danger">Nesprávny email</p>
                             @enderror
 
                             <div class="d-flex justify-content-between mb-3 px-3 py-1 w-100" style="background-color: #f1f1f1;">
@@ -139,5 +139,3 @@
         });
     </script>
 </x-layout>
-
-{{-- Neviem ci nechat sidebar alebo nn --}}

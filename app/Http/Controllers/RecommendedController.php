@@ -26,10 +26,8 @@ class RecommendedController extends Controller
         }
         $userId = Auth::id();
     
-        // Get all categories
         $categories = Category::all();
-    
-        // Get the user's selected categories (assuming there's a pivot table or relation)
+
         $selectedCategories = Recommendation::where('user_id', $userId)->pluck('category_id');
     
         return view("listings.setup", [
@@ -87,9 +85,9 @@ class RecommendedController extends Controller
         $isSelected = $request->selected;
     
         if ($isSelected) {
-            $user->recommendationsMtm()->syncWithoutDetaching([$categoryId]); // Add without removing existing
+            $user->recommendationsMtm()->syncWithoutDetaching([$categoryId]); // pridat bez odstranenia uz oznacenych
         } else {
-            $user->recommendationsMtm()->detach($categoryId); // Remove if deselected
+            $user->recommendationsMtm()->detach($categoryId); // odstranit ak odznacene
         }
     
         return response()->json(["success" => true]);

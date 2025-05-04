@@ -71,5 +71,3 @@
         </div>
     </div>
 </x-layout>
-
-{{-- Neviem ci nechat sidebar alebo nn --}}

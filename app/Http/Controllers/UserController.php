@@ -27,7 +27,7 @@ class UserController extends Controller
         $formFields = $request->validate([
             "name" => ["required", "min:4", "max:25"],
             "username" => ["required", "min:5", "max:25", Rule::unique("users", "username"), "regex:/^[a-z0-9_]+$/",],
-            "email" => "required",
+            "email" => ["required", "email", Rule::unique("users", "email")],
             "description" => "nullable|max:255",
             "phone" => "nullable",
             "password" => "required|confirmed|min:5|regex:/^(?=.*[A-Z])(?=.*\d).+$/",
@@ -48,7 +48,6 @@ class UserController extends Controller
         event(new Registered($user));
 
         return redirect("/setup/{$user->id}")->with("messasge", "Úspešne zaregistrovaný.");
-        //return response()->noContent();
     }
 
     public function authenticate(Request $request) {

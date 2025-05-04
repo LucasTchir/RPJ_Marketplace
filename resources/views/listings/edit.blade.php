@@ -92,32 +92,6 @@
                                     @enderror
                                 </div>
 
-                                {{-- <div>
-                                    <select class="form-select mb-3 px-3 py-3 w-100" name="condition" style="color: grey;">
-                                        <option value="1" selected disabled>Condition</option>
-                                        <option value="2">New</option>
-                                        <option value="3">Used - as new</option>
-                                        <option value="4">Used - in good condition</option>
-                                        <option value="5">Used - in fair condition</option>
-                                    </select>
-            
-                                    @error("condition")
-                                        <p class="text-danger">{{$message}}</p>  
-                                    @enderror
-                                </div>
-
-                                <div>
-                                    <input class="mb-3 border rounded px-3 py-3 w-100"
-                                        type="number" 
-                                        name="quantity"
-                                        placeholder="Množstvo"
-                                        value="{{$listing->quantity}}">
-    
-                                    @error("quantity")
-                                        <p class="text-danger">{{$message}}</p>  
-                                    @enderror
-                                </div> --}}
-
                                 <div>
                                     <textarea class="rounded-2 border mb-3 w-100 px-3 py-3" placeholder="Popis..." name="description" rows="4" style="resize: none;">{{ old('description', $listing->description ?? '') }}</textarea>
                                     

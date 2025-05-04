@@ -17,6 +17,7 @@ class VerifyEmail extends VerifyEmailBase
             return call_user_func(static::$toMailCallback, $notifiable);
         }
         return (new MailMessage)
+            ->from($address = 'noreply@example.com', $name = 'Marketplace')
             ->subject('Overenie e-mailu')
             ->greeting('Dobrý deň!')
             ->line('Ďakujeme za registráciu. Na overenie vašej e-mailovej adresy kliknite na tlačidlo nižšie.')

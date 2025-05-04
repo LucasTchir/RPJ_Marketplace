@@ -166,12 +166,6 @@ class ListingController extends Controller
 
     public function destroy(Listing $listing) 
     {
-        /* if (auth()->check() && auth()->user()->isAdmin()) {
-            $user->delete();
-
-            return redirect("/dashboard/users")->with("message", "User deleted successfully!");
-        } */
-
         if($listing->user_id != auth()->id()) {
             abort(403, "Unauthorized Action");
         }
