@@ -62,7 +62,7 @@ class UserController extends Controller
             return redirect("/")->with("message", "Úspešne prihlásený!");
         }
 
-        return back()->withErrors(["username" => "Nesprávne prihlasovacie meno!"])->onlyInput("username");
+        return back()->withErrors(["username" => "Nesprávne prihlasovacie udaje!"])->onlyInput("username");
     }
 
     public function logout(request $request) {
