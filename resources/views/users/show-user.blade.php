@@ -163,7 +163,7 @@
                             <x-listing :listing="$listing"/>
                         @endforeach
                     @else
-                        <p>Tento použivatel aktuálne nemá ziadne inzeráty.</p>
+                        <p>Tento použivatel aktuálne nemá žiadne inzeráty.</p>
                     @endunless
 
                     <div class="d-flex justify-content-center mt-3">
