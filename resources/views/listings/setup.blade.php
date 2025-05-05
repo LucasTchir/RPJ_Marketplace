@@ -32,7 +32,7 @@
                         <div class="d-flex justify-content-center">
                             <div class="row w-75 d-flex align-items-center border-bottom border-black" style="height: 8vh;">
                                 <div class="col-12 col-sm-9 text-center text-sm-start">
-                                    <h4 class="fw-bold mb-0 fs-3">Nastav si svoj profil</h4>
+                                    <h4 class="fw-bold mb-0 fs-3">Nastavte si svoj profil</h4>
                                 </div>
                     
                                 <div class="col-12 col-sm-3 d-flex justify-content-between justify-content-sm-end">
@@ -133,7 +133,7 @@
                         <div class="d-flex justify-content-center">
                             <div class="row w-75 d-flex align-items-center border-bottom border-black" style="height: 8vh;">
                                 <div class="col-12 col-sm-9 text-center text-sm-start">
-                                    <h4 class="fw-bold mb-0 fs-3">Vyber si čo ťa najviac zaujíma</h4>
+                                    <h4 class="fw-bold mb-0 fs-3">Vyberte si čo vás najviac zaujíma</h4>
                                 </div>
                         
                                 <div class="col-12 col-sm-3 d-flex justify-content-between justify-content-sm-end">
