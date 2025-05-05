@@ -303,7 +303,7 @@
                                 </span>
                             </a>
 
-                            <form method="POST" action="/logout" class="ms-3 d-flex align-items-center">
+                            <form method="POST" action="/logout" class="ms-3 mb-0 d-flex align-items-center">
                                 @csrf
                                 <button type="submit" class="btn d-flex align-items-center px-1 py-1">
                                     <i class="bi bi-box-arrow-right fs-4" style="font-size: 18px;"></i>

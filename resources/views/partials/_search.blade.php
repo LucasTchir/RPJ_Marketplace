@@ -4,7 +4,7 @@
             @foreach ($listings as $index => $listing)
                 <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
                     <div class="d-flex justify-content-center align-items-center h-100 slider-margin" style="margin-left: 200px;">
-                        <div class="slider-listing rounded-4 d-flex flex-row p-3" style="max-height: 300px; width: 500px; background-color: rgb(255, 255, 255); -webkit-box-shadow: inset 0px 0px 52px -20px rgba(0,0,0,0.75); -moz-box-shadow: inset 0px 0px 52px -20px rgba(0,0,0,0.75); box-shadow: inset 0px 0px 52px -20px rgba(0,0,0,0.75);"> 
+                        <div class="slider-listing rounded-4 d-flex flex-row p-3" style="max-height: 300px; min-width: 500px; background-color: rgb(255, 255, 255); -webkit-box-shadow: inset 0px 0px 52px -20px rgba(0,0,0,0.75); -moz-box-shadow: inset 0px 0px 52px -20px rgba(0,0,0,0.75); box-shadow: inset 0px 0px 52px -20px rgba(0,0,0,0.75);"> 
                             <x-listing-mini :listing="$listing" />
                             <div class="slider-listing-info text-dark d-flex flex-column align-items-center ms-4 mt-3">
                                 <a href="/users/{{$listing->user->username}}" class="fw-semibold link d-flex align-items-center ms-5 mt-4 text-dark text-decoration-none">

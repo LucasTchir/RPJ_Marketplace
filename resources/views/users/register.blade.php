@@ -95,7 +95,7 @@
                                     placeholder="*Heslo"
                                     value="{{old("password")}}"/>
 
-                                <button type="button" class="btn border-0" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Heslo musí obsahovať aspoň 5 znakov, jedno veľké písmeno a jedno číslo.">
+                                <button type="button" class="btn border-0" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Heslo musí obsahovať aspoň 8 znakov, jedno veľké písmeno a jedno číslo.">
                                     <i class="bi bi-info-circle"></i>
                                 </button>
                             </div>
