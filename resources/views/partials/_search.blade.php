@@ -12,7 +12,7 @@
                                 <div class="col-6">
                                     <div class="slider-listing-info text-dark d-flex flex-column align-items-center mt-3">
                                         <a href="/users/{{$listing->user->username}}" class="fw-semibold link d-flex align-items-center mt-4 text-dark text-decoration-none">
-                                            <span class="rounded-circle overflow-hidden me-3" style="width: 42px; height: 42px;">
+                                            <span class="rounded-circle overflow-hidden me-3" style="min-width: 42px; min-height: 42px;">
                                                 <img class="w-100 h-100 object-fit-cover" src="{{$listing->user->photo ? asset("storage/" . $listing->user->photo) : asset("/images/blank-profile-picture.png")}}" alt="...">
                                             </span>
                                             <span class="fs-5 text-dark">{{$listing->user->name}}</span>
