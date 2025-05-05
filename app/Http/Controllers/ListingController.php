@@ -244,7 +244,7 @@ class ListingController extends Controller
     public function showSellers() {
         return view("listings.show-sellers", [
             "categories" => Category::all(),
-            "users" => User::all()
+            "users" => User::where('id', '!=', 1)->get()
         ]);
     }
 
