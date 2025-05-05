@@ -5,7 +5,7 @@
             <div class="container-fluid p-0" style="margin-top: 70px;">
                 <div class="row d-flex align-items-center mx-3 mx-sm-5" style="height: 6vh;">
                     <div class="col-10 col-sm-11">
-                        <h4 class="fw-bold mb-0">Edit Listing</h4>
+                        <h4 class="fw-bold mb-0">Upraviť inzerát</h4>
                     </div>
 
                     <div class="col-2 col-sm-1 d-flex justify-content-end">
@@ -40,7 +40,7 @@
                                     <input class="mb-3 border rounded px-3 py-3 w-100"
                                         type="text" 
                                         name="item_name"
-                                        placeholder="Item Name"
+                                        placeholder="Názov položky"
                                         value="{{$listing->item_name}}">
 
                                     @error("item_name")
@@ -53,7 +53,7 @@
                                     <input class="mb-3 border rounded px-3 py-3 w-100"
                                         type="number" 
                                         name="price"
-                                        placeholder="Price"
+                                        placeholder="Cena"
                                         step="0.01" 
                                         min="0"
                                         value="{{$listing->price}}">
@@ -65,7 +65,7 @@
 
                                 <div>
                                     <select class="form-select mb-3 px-3 py-3 w-100" name="category_id" style="color: grey;">
-                                        <option selected disabled>Category</option>
+                                        <option selected disabled>Kategória</option>
                                         @foreach ($categories as $category)
                                             <option value="{{$category->id}}">{{$category->category_name}}</option>
                                         @endforeach
@@ -77,33 +77,7 @@
                                 </div>
 
                                 <div>
-                                    <select class="form-select mb-3 px-3 py-3 w-100" name="condition" style="color: grey;">
-                                        <option value="1" selected disabled>Condition</option>
-                                        <option value="2">New</option>
-                                        <option value="3">Used - as new</option>
-                                        <option value="4">Used - in good condition</option>
-                                        <option value="5">Used - in fair condition</option>
-                                    </select>
-            
-                                    @error("condition")
-                                        <p class="text-danger">{{$message}}</p>  
-                                    @enderror
-                                </div>
-
-                                <div>
-                                    <input class="mb-3 border rounded px-3 py-3 w-100"
-                                        type="number" 
-                                        name="quantity"
-                                        placeholder="Quantity"
-                                        value="{{$listing->quantity}}">
-    
-                                    @error("quantity")
-                                        <p class="text-danger">{{$message}}</p>  
-                                    @enderror
-                                </div>
-
-                                <div>
-                                    <textarea class="rounded-2 border mb-3 w-100 px-3 py-3" placeholder="Description..." name="description" rows="4" style="resize: none;">{{ old('description', $listing->description ?? '') }}</textarea>
+                                    <textarea class="rounded-2 border mb-3 w-100 px-3 py-3" placeholder="Popis..." name="description" rows="4" style="resize: none;">{{ old('description', $listing->description ?? '') }}</textarea>
                                     
                                     @error("description")
                                         <p class="text-danger">{{$message}}</p>  
@@ -111,7 +85,7 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label>Location:</label>
+                                    <label>Poloha:</label>
                                     <div id="map" style="width: 100%; height: 300px;"></div>
                                     <input type="hidden" name="lat" id="lat" value="{{$listing->lat}}">
                                     <input type="hidden" name="lng" id="lng" value="{{$listing->lng}}">
@@ -124,7 +98,7 @@
                                     @enderror
                                 </div>
 
-                                <button type="submit" class="" style="">EDIT</button>
+                                <button type="submit" class="" style="">Uložiť</button>
                             </div>
                         </div>
                     </div>

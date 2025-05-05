@@ -47,7 +47,7 @@
                             <div class="w-75 row g-3">
                                 <div class="col-12 col-md-6 p-3">
                                     <div class="mb-3">
-                                        <label for="photo" class="form-label fw-bold">Profile Picture</label>
+                                        <label for="photo" class="form-label fw-bold">Profilová fotka</label>
                                     </div>
 
                                     <div class="text-center">
@@ -84,7 +84,7 @@
                                     </div>
                                     
                                     <div class="mb-3">
-                                        <label for="description" class="form-label fw-bold">Description</label>
+                                        <label for="description" class="form-label fw-bold">Popis:</label>
                                         <textarea 
                                             name="description" 
                                             class="form-control" 

@@ -20,7 +20,7 @@ class FollowController extends Controller
             'description' => 'vás začal sledovať.'
         ]);
 
-        return back()->with("message", "Sledujete použivateľa [meno]!");
+        return back()->with("message", "Sledujete použivateľa!");
     }
 
     public function unfollow($name) {
@@ -28,6 +28,6 @@ class FollowController extends Controller
 
         auth()->user()->following()->where('followed_id', $user->id)->delete();
 
-        return back()->with("message", "Prestali ste sledovať použivateľa [meno]!");
+        return back()->with("message", "Prestali ste sledovať použivateľa!");
     }
 }

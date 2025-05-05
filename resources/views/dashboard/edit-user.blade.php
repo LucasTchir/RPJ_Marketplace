@@ -2,7 +2,7 @@
     <div class="content" id="content" style="padding-top: 50px;">
         <div class="container p-5">
             <div class="border-bottom border-2 d-flex justify-content-between">
-                <h2 class="text-start fw-bold mb-3 fs-3"><a href="/dashboard" class="link" style="color: darkgrey;">Dashboard > </a>Upraviť profil</h2>
+                <h2 class="text-start fw-bold mb-3 fs-3"><a href="/dashboard" class="link" style="color: darkgrey;">Ovladací panel > </a>Upraviť profil</h2>
             </div>
 
             <form method="POST" action="/dashboard/profile/{{$user->id}}" enctype="multipart/form-data">

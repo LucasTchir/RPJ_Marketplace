@@ -9,7 +9,7 @@
             <div class="mt-4">
                 <div class="" style="max-width: 1710px; margin: 0 auto;">
                     <div class="d-flex justify-content-between align-items-center mb-1">
-                        <span class="fw-bold" style="font-size: 24px;">Vysledky pre "{{$searchQuery}}"</span>
+                        <span class="fw-bold" style="font-size: 24px;">Výsledky pre "{{$searchQuery}}"</span>
                     </div>
 
                     <div class="row d-flex justify-content-center justify-content-sm-start px-1 px-sm-5">
