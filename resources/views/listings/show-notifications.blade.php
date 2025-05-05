@@ -7,7 +7,7 @@
     <div class="content" id="content" style="padding-top: 130px; height: 100% !important;">
         <div class="container" style="max-width: 1700px;">
             <div class="row mt-4">
-                <div class="col-12 col-md-6">
+                {{-- <div class="col-12 col-md-6">
                     <h4 class="fw-bold border-bottom pb-2">Správy</h4>
 
                     <div style="width: 100%;">
@@ -23,7 +23,7 @@
                             <p class="card-text m-0 text-start ms-3">Pre zobrazenie správ sa prosím prihláste.</p>
                         @endif
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="col-0 col-md-1">
 
