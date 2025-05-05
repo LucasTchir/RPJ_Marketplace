@@ -20,17 +20,20 @@
                         @csrf
                         <div class="row border-top" style="min-height: 84vh;">
                             <div class="col-12 col-lg-9">
-                                <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
-                                    <input class="" name="main_image" type="file">
+                                <div class="d-flex justify-content-center align-items-center flex-column w-100" style="height: 100%;">
+                                    <label for="main_image" class="fw-semibold mb-1">Hlavný obrázok, max 1</label>
+                                    <input id="main_image" name="main_image" type="file" class="mb-3">
                                     @error("main_image")
                                         <p class="text-danger">{{$message}}</p>  
                                     @enderror
-
-                                    <input class="" name="image[]" type="file" multiple>
+                                
+                                    <label for="image" class="fw-semibold mb-1">Vedľajšie obrázky, max 7</label>
+                                    <input id="image" name="image[]" type="file" multiple>
                                     @error("image.*")
                                         <p class="text-danger">{{$message}}</p>  
                                     @enderror
                                 </div>
+                                
                             </div>
 
                             <div class="col-12 col-lg-3 border-start pt-3">
@@ -84,7 +87,7 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label>Location:</label>
+                                        <label class="fw-semibold">Oblasť:</label>
                                         <div id="map" style="width: 100%; height: 300px;"></div>
                                         <input type="hidden" name="lat" id="lat" value="{{ old('lat') }}">
                                         <input type="hidden" name="lng" id="lng" value="{{ old('lat') }}">

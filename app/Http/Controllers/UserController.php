@@ -30,7 +30,7 @@ class UserController extends Controller
             "email" => ["required", "email", Rule::unique("users", "email")],
             "description" => "nullable|max:255",
             "phone" => "nullable",
-            "password" => "required|confirmed|min:5|regex:/^(?=.*[A-Z])(?=.*\d).+$/",
+            "password" => "required|confirmed|min:8|regex:/^(?=.*[A-Z])(?=.*\d).+$/",
             "lat" => "nullable|numeric",
             "lng" => "nullable|numeric",
         ]);
