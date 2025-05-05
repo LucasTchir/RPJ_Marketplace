@@ -21,13 +21,28 @@
                     @method("PUT")
                     <div class="row border-top" style="min-height: 84vh;">
                         <div class="col-12 col-lg-9">
-                            <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
-                                <input class="" name="main_image" type="file" value="{{$listing->main_image}}">
+                            <div class="d-flex justify-content-center align-items-center flex-column" style="height: 100%;">
+                                @if($listing->main_image)
+                                    <div>
+                                        <img src="{{ asset('storage/' . $listing->main_image) }}" alt="Main Image" style="width: 150px; height: auto; margin-bottom: 10px;">
+                                    </div>
+                                @endif
+                        
+                                <input name="main_image" type="file">
                                 @error("main_image")
                                     <p class="text-danger">{{$message}}</p>  
                                 @enderror
-
-                                <input class="" name="image[]" type="file" multiple value="{{$listing->image}}">
+                        
+                                @if($listing->image)
+                                    @foreach(json_decode($listing->image, true) as $key => $image)
+                                        <div style="margin-bottom: 10px;">
+                                            <img src="{{ asset('storage/' . $image) }}" alt="Image {{ $key + 1 }}" style="width: 100px; height: auto; margin-right: 10px;">
+                                            <input type="checkbox" name="delete_images[]" value="{{ $key }}"> Delete
+                                        </div>
+                                    @endforeach
+                                @endif
+                        
+                                <input name="image[]" type="file" multiple>
                                 @error("image.*")
                                     <p class="text-danger">{{$message}}</p>  
                                 @enderror
