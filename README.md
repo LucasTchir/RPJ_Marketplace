@@ -27,16 +27,22 @@ odporucania, sledovanie predajcov, hodnotenia, upozornenia a administracny panel
 
 ## Ukážka
 
+### Register
 ![Register](public/images/register.png)
 
+### Domovská stránka
 ![Domovská stránka](public/images/home.png)
 
+### Stránka kategórie
 ![Kategória](public/images/category.png)
 
+### Inzerát
 ![Inzerát](public/images/listing.png)
 
+### Profil
 ![Profil](public/images/profile.png)
 
+### Dashboard
 ![Dashboard](public/images/dashboard.png)
 
 ## Instalacia
